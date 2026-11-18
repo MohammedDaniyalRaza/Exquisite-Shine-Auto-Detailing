@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Syne", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-obsidian: #05060a;
+  --color-graphite: #0b0d14;
+  --color-charcoal: #121622;
+  --color-accent: #1f6bff;
+  --color-accent-light: #4d9bff;
+  --color-silver-bright: #f4f6f8;
+  --color-silver-mid: #a9b0b8;
+  --color-silver-dim: #6b727a;
+}
+
+:root {
+  --bg-obsidian: #05060a;
+  --bg-graphite: #0b0d14;
+  --bg-charcoal: #121622;
+  --border-hairline: rgba(255, 255, 255, 0.09);
+  --border-silver: rgba(169, 176, 184, 0.22);
+  --accent-blue: #1f6bff;
+  --accent-blue-light: #4d9bff;
+  --silver-bright: #f4f6f8;
+  --silver-mid: #a9b0b8;
+  --silver-dim: #6b727a;
+}
+
+@layer base {
+  html {
+    background-color: var(--bg-obsidian);
+    color: #ffffff;
+    font-family: var(--font-sans);
+    overflow-x: clip;
+    scroll-behavior: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--bg-obsidian);
+    color: #ffffff;
+    font-family: var(--font-sans);
+    overflow-x: clip;
+    min-height: 100svh;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: rgba(31, 107, 255, 0.35);
+    color: #ffffff;
+  }
+}

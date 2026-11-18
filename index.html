@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Exquisite Shine Auto Detailing | Loveland</title>
+    <meta
+      name="description"
+      content="Precision automotive detailing in Loveland. Hand-finished exterior washes, interior care, machine polishing, and wax protection by Exquisite Shine Auto Detailing."
+    />
+    <meta property="og:title" content="Exquisite Shine Auto Detailing | Loveland" />
+    <meta
+      property="og:description"
+      content="Detail-obsessed finishes in Loveland. Exterior wash & detail, interior detail, machine polishing, and wax protection."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#05060A" />
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link rel="apple-touch-icon" href="/images/logo.png" />
+
+    <!-- Fonts: Syne (Display), Hanken Grotesk (Body), Space Mono (Numbers & Labels) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Preload critical hero showroom image -->
+    <link rel="preload" as="image" href="/images/hero-showroom.jpg" fetchpriority="high" />
+
+    <!-- Inline Preloader Styles for instant near-black paint -->
+    <style>
+      html,
+      body {
+        background-color: #05060a;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+      }
+
+      #es-preloader {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background-color: #05060a;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition:
+          transform 0.5s cubic-bezier(0.76, 0, 0.24, 1),
+          opacity 0.45s ease;
+        will-change: transform, opacity;
+      }
+
+      #es-preloader.es-preloader--exit {
+        transform: translate3d(0, -100%, 0);
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      #es-preloader .es-pre-logo-wrap {
+        width: 140px;
+        height: 140px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: es-pre-breathe 1.6s ease-in-out infinite alternate;
+      }
+
+      #es-preloader .es-pre-logo {
+        width: 140px;
+        height: 140px;
+        object-fit: contain;
+        display: block;
+      }
+
+      #es-preloader .es-pre-track {
+        width: 160px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.12);
+        overflow: hidden;
+        position: relative;
+      }
+
+      #es-preloader .es-pre-bar {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, #1f6bff, #4d9bff);
+        transform-origin: left center;
+        transform: scaleX(0.08);
+        animation: es-pre-progress 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+
+      #es-preloader .es-pre-label {
+        font-family: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 11px;
+        letter-spacing: 0.28em;
+        color: rgba(169, 176, 184, 0.85);
+        text-transform: uppercase;
+      }
+
+      @keyframes es-pre-breathe {
+        from {
+          opacity: 0.86;
+          transform: scale(0.98);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1.02);
+        }
+      }
+
+      @keyframes es-pre-progress {
+        0% {
+          transform: scaleX(0.08);
+        }
+        60% {
+          transform: scaleX(0.74);
+        }
+        100% {
+          transform: scaleX(1);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        #es-preloader .es-pre-logo-wrap,
+        #es-preloader .es-pre-bar {
+          animation: none;
+          transform: none;
+        }
+        #es-preloader {
+          transition: opacity 0.25s ease;
+        }
+        #es-preloader.es-preloader--exit {
+          transform: none;
+          opacity: 0;
+        }
+      }
+    </style>
+
+    <script>
+      (function () {
+        try {
+          if (sessionStorage.getItem('es_preloader_seen') === '1') {
+            document.documentElement.classList.add('es-skip-preloader');
+          }
+        } catch (e) {
+          // Ignore storage access errors
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="es-preloader" aria-hidden="true">
+      <div class="es-pre-logo-wrap">
+        <img
+          src="/images/logo.png"
+          alt="Exquisite Shine Auto Detailing"
+          width="140"
+          height="140"
+          class="es-pre-logo"
+        />
+      </div>
+      <div class="es-pre-track">
+        <div class="es-pre-bar"></div>
+      </div>
+      <div class="es-pre-label">LOADING</div>
+    </div>
+
+    <script>
+      (function () {
+        var preloader = document.getElementById('es-preloader');
+        var skipped = document.documentElement.classList.contains('es-skip-preloader');
+
+        function finishPreloader() {
+          if (window.__esPreloaderDone) return;
+          window.__esPreloaderDone = true;
+          try {
+            sessionStorage.setItem('es_preloader_seen', '1');
+          } catch (e) {}
+          document.documentElement.style.overflow = '';
+          document.body.style.overflow = '';
+
+          if (preloader && preloader.parentNode) {
+            preloader.classList.add('es-preloader--exit');
+            setTimeout(function () {
+              if (preloader && preloader.parentNode) {
+                preloader.parentNode.removeChild(preloader);
+              }
+              window.dispatchEvent(new CustomEvent('es:preloader-done'));
+            }, 520);
+          } else {
+            window.dispatchEvent(new CustomEvent('es:preloader-done'));
+          }
+        }
+
+        if (skipped) {
+          if (preloader && preloader.parentNode) {
+            preloader.parentNode.removeChild(preloader);
+          }
+          window.__esPreloaderDone = true;
+          return;
+        }
+
+        var minElapsed = false;
+        var assetsReady = false;
+        var settled = false;
+
+        function tryComplete() {
+          if (!settled && minElapsed && assetsReady) {
+            settled = true;
+            finishPreloader();
+          }
+        }
+
+        // Minimum 900ms display
+        setTimeout(function () {
+          minElapsed = true;
+          tryComplete();
+        }, 900);
+
+        // Hard maximum 2000ms failsafe
+        setTimeout(function () {
+          if (!settled) {
+            settled = true;
+            finishPreloader();
+          }
+        }, 2000);
+
+        // Wait for fonts + hero image decode
+        var fontsPromise =
+          document.fonts && document.fonts.ready
+            ? document.fonts.ready.catch(function () {})
+            : Promise.resolve();
+
+        var heroImgPromise = new Promise(function (resolve) {
+          try {
+            var img = new Image();
+            img.src = '/images/hero-showroom.jpg';
+            if (img.complete) {
+              resolve();
+              return;
+            }
+            img.onload = function () {
+              if (typeof img.decode === 'function') {
+                img.decode().catch(function () {}).finally(resolve);
+              } else {
+                resolve();
+              }
+            };
+            img.onerror = resolve;
+            setTimeout(resolve, 1400);
+          } catch (e) {
+            resolve();
+          }
+        });
+
+        Promise.all([fontsPromise, heroImgPromise])
+          .catch(function () {})
+          .finally(function () {
+            assetsReady = true;
+            tryComplete();
+          });
+      })();
+    </script>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
